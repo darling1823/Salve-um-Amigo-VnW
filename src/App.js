@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Link, Routes, Route} from 'react-router-dom'
 import * as S from './Components/Home/Style'
 import Background from './Components/data/dogcat.jpg'
 import Home from './Components/Home/Home'
+import Dogs from './Components/Dog/Dog'
+import Cats from './Components/Cat/Cat'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
@@ -45,8 +47,8 @@ const App = () => {
       <Menu/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/dogs'/>
-        <Route path='/cats'/>
+        <Route path='/dogs' element={<Dogs/>}/>
+        <Route path='/cats' element={<Cats/>}/>
       </Routes>
     </Router>
   )
