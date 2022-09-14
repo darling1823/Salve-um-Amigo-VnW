@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import * as S from '../Dog/Style'
-import BG from '../data/dogsbg.jpg'
-import Dog from '../data/littleone.png'
+import BG from '../data/catsbg.jpg'
+import Cat from '../data/catone.png'
+
 
 const Cats = () => {
 
-    const [dog, setDog] = useState(null)
+    const [cat, setCat] = useState(null)
 
     const [open, setOpen] = useState(false)
 
@@ -17,10 +18,23 @@ const Cats = () => {
         return(
             <div>
             <figure>
-                <img src={dog} alt='Amigão!'/>
+                <img src={cat} alt='Amigão!'/>
             </figure>
             </div>
         )
+    }
+
+    const API = 'https://api.thecatapi.com/v1/images/search'
+
+    const getCats = () => {
+        axios
+            .get(API)
+            .then((response)=>{
+                setCat(response.data.url)
+            })
+            .catch((error)=>{
+                console.log('Sorry, we made a mistake! Give us a little moment to solve!', error)
+            })
     }
 
     return(
@@ -29,14 +43,15 @@ const Cats = () => {
                 <S.BG src={BG} alt='background' />
             </S.FIGURE>
             <S.Container>
-                <S.H2>Amigos Caninos</S.H2>
+                <S.H2>Amigos Felinos</S.H2>
                 <S.Content>
-                    <S.P>Nessa área, você pode conhecer todos os nossos queridos amigos caninos. Como queremos que todos tenham uma chance igual, aperte no botão a seguir para conhecer um de cada vez!</S.P>
                     <figure>
-                        <img src={Dog} alt='Dog'/>
+                        <img src={Cat} alt='Dog'/>
                     </figure>
+                    <S.P>Nessa área, você pode conhecer todos os nossos queridos amigos felinos. Como queremos que todos tenham uma chance igual, aperte no botão a seguir para conhecer um de cada vez!</S.P>
                 </S.Content>
-               
+                <button onClick={()=>{getCats(); setOpen(true)}}>Clique aqui!</button>
+                {open && Friend()}
             </S.Container>
         </S.SECTION>
     )

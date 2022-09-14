@@ -18,7 +18,7 @@ const Dogs = () => {
         axios
             .get(API)
             .then((response)=>{
-                setDog(response.data)
+                setDog(response.data.message)
             })
             .catch((error)=>{
                 console.log('Sorry, we made a mistake! Give us a little moment to solve!', error)
@@ -48,7 +48,7 @@ const Dogs = () => {
                         <img src={Dog} alt='Dog'/>
                     </figure>
                 </S.Content>
-                <button onClick={()=>{getDogs(); setOpen(!open)}}>Clique aqui!</button>
+                <button onClick={()=>{getDogs(); setOpen(true)}}>Clique aqui!</button>
                 {open && Friend()}
             </S.Container>
         </S.SECTION>
