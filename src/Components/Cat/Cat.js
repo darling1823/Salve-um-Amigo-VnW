@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import * as S from '../Dog/Style'
+import * as S from '../Cat/Style'
 import BG from '../data/catsbg.jpg'
 import Cat from '../data/catone.png'
 

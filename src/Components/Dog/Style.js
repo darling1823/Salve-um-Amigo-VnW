@@ -96,3 +96,46 @@ export const Content = styled.div`
     justify-content: space-evenly;
     margin-bottom: 1vw;
 `
+
+export const DogContainer = styled.figure`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 20vw;
+`
+
+export const LilDog = styled.img`
+    width: 15vw;
+`
+
+export const BUTTON = styled.button`
+    color: #D8572A;
+    background: #780116;
+    width: 10vw;
+    border: solid #D8572A;
+    font-size: 1.5vw;
+    font-weight: 600;
+    height: 50px;
+`
+
+export const APIContainer = styled.div`
+    margin-top: 1.5vw;  
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+`
+
+export const FriendContainer = styled.figure`
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+    height: 300px;
+    align-items: center;
+    border: solid #D8572A 10px;
+    overflow: hidden;
+`
+
+export const Friend = styled.img`
+    width: 500px;
+`
